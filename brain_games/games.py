@@ -11,6 +11,8 @@ def get_what_to_ask(game):
         return "Find the greatest common divisor of given numbers."
     elif game == 'progression':
         return "What number is missing in the progression?"
+    elif game == 'prime':
+        return 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def even_game():
@@ -59,6 +61,14 @@ def progression_game():
     return (question.strip(), str(right_answer))
 
 
+def prime_game():
+    question = randint(1, 100)
+    for i in range(2, (question // 2) + 1):
+        if question % i == 0:
+            return (str(question), 'no')
+    return (str(question), 'yes')
+
+
 def get_questions(game):
     if game == 'even':
         (question, right_answer) = even_game()
@@ -71,6 +81,9 @@ def get_questions(game):
         return (question, right_answer)
     if game == 'progression':
         (question, right_answer) = progression_game()
+        return (question, right_answer)
+    if game == 'prime':
+        (question, right_answer) = prime_game()
         return (question, right_answer)
 
 
