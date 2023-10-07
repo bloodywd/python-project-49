@@ -1,7 +1,18 @@
-from random import randint
 
-
-def get_random():
-    number = randint(1, 100)
-    odd_or_not = number % 2 == 0 and 'yes' or 'no'
-    return (number, odd_or_not)
+# play game function
+def play_game(name, question_to_be_asked, questions, right_answers):
+    # get list with questions and answers
+    print(question_to_be_asked)
+    n = 5
+    for i in range(0, n):
+        print(f'Question: {questions[i]}')
+        ans_u = input("Your answer: ")
+        if right_answers[i] != ans_u:
+            str = f"'{ans_u}' is wrong answer ;(. "
+            str += f"Correct answer was '{right_answers[i]}'."
+            print(str)
+            print(f'Let\'s try again, {name}')
+            return
+        else:
+            print('Correct!')
+    print(f'Congratulations, {name}!')
