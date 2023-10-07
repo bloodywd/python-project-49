@@ -9,6 +9,8 @@ def get_what_to_ask(game):
         return "What is the result of the expression?"
     elif game == 'gcd':
         return "Find the greatest common divisor of given numbers."
+    elif game == 'progression':
+        return "What number is missing in the progression?"
 
 
 def even_game():
@@ -39,6 +41,24 @@ def gcd_game():
     return (f'{number_1} {number_2}', str(right_answer))
 
 
+def progression_game():
+    next_number = randint(1, 10)
+    step = randint(2, 8)
+    progression_range = randint(5, 10)
+    answer_index = randint(0, progression_range - 1)
+    question = ''
+    right_answer = 0
+    for i in range(0, progression_range):
+        if i == answer_index:
+            question += ".. "
+            right_answer = next_number
+            next_number += step
+            continue
+        question = question + str(next_number) + " "
+        next_number += step
+    return (question.strip(), str(right_answer))
+
+
 def get_questions(game):
     if game == 'even':
         (question, right_answer) = even_game()
@@ -48,6 +68,9 @@ def get_questions(game):
         return (question, right_answer)
     if game == 'gcd':
         (question, right_answer) = gcd_game()
+        return (question, right_answer)
+    if game == 'progression':
+        (question, right_answer) = progression_game()
         return (question, right_answer)
 
 
