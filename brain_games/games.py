@@ -1,11 +1,15 @@
 from random import randint
 
 
+def odd_or_not(number):
+    return number % 2 == 0 and 'yes' or 'no'
+
+
 def even(name):
     print("Answer \"yes\" if the number is even, otherwise answer \"no\".")
     for i in range(0, 3):
         question_number = randint(1, 100)
-        ans = (question_number % 2 == 0 and 'yes') or 'no'
+        ans = odd_or_not(question_number)
         print(f'Question: {question_number}')
         ans_u = input("Your answer: ")
 
