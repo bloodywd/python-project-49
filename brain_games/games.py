@@ -1,16 +1,11 @@
-from random import randint
-
-
-def odd_or_not(number):
-    return number % 2 == 0 and 'yes' or 'no'
+from .logic import get_random
 
 
 def even(name):
     print("Answer \"yes\" if the number is even, otherwise answer \"no\".")
     for i in range(0, 3):
-        question_number = randint(1, 100)
-        ans = odd_or_not(question_number)
-        print(f'Question: {question_number}')
+        (number, ans) = get_random()
+        print(f'Question: {number}')
         ans_u = input("Your answer: ")
 
         if ans != ans_u:
