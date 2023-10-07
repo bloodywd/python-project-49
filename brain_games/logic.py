@@ -3,7 +3,7 @@
 def play_game(name, question_to_be_asked, questions, right_answers):
     # get list with questions and answers
     print(question_to_be_asked)
-    n = 5
+    n = 3
     for i in range(0, n):
         print(f'Question: {questions[i]}')
         ans_u = input("Your answer: ")

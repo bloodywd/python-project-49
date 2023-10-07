@@ -1,38 +1,61 @@
 from random import randint
+from math import gcd
 
 
 def get_what_to_ask(game):
     if game == 'even':
         return "Answer \"yes\" if the number is even, otherwise answer \"no\"."
-    if game == 'calc':
+    elif game == 'calc':
         return "What is the result of the expression?"
+    elif game == 'gcd':
+        return "Find the greatest common divisor of given numbers."
+
+
+def even_game():
+    question = randint(1, 100)
+    right_answer = question % 2 == 0 and 'yes' or 'no'
+    return (str(question), str(right_answer))
+
+
+def calc_game():
+    number_1 = randint(1, 25)
+    number_2 = randint(1, 25)
+    operation = randint(0, 2)
+    if operation == 0:
+        right_answer = number_1 + number_2
+        return (f'{number_1} + {number_2}', str(right_answer))
+    elif operation == 1:
+        right_answer = number_1 - number_2
+        return (f'{number_1} - {number_2}', str(right_answer))
+    elif operation == 2:
+        right_answer = number_1 * number_2
+        return (f'{number_1} * {number_2}', str(right_answer))
+
+
+def gcd_game():
+    number_1 = randint(1, 25) + randint(1, 25)
+    number_2 = randint(1, 25)
+    right_answer = gcd(number_1, number_2)
+    return (f'{number_1} {number_2}', str(right_answer))
 
 
 def get_questions(game):
     if game == 'even':
-        question = randint(1, 100)
-        right_answer = question % 2 == 0 and 'yes' or 'no'
-        return (str(question), str(right_answer))
+        (question, right_answer) = even_game()
+        return (question, right_answer)
     if game == 'calc':
-        number_1 = randint(1, 25)
-        number_2 = randint(1, 25)
-        operation = randint(0, 2)
-        if operation == 0:
-            right_answer = number_1 + number_2
-            return (f'{number_1} + {number_2}', str(right_answer))
-        elif operation == 1:
-            right_answer = number_1 - number_2
-            return (f'{number_1} - {number_2}', str(right_answer))
-        elif operation == 2:
-            right_answer = number_1 * number_2
-            return (f'{number_1} * {number_2}', str(right_answer))
+        (question, right_answer) = calc_game()
+        return (question, right_answer)
+    if game == 'gcd':
+        (question, right_answer) = gcd_game()
+        return (question, right_answer)
 
 
 def get_data(game):
     question_to_be_asked = get_what_to_ask(game)
     questions = []
     right_answers = []
-    n = 5
+    n = 3
     for i in range(0, n):
         (question, right_answer) = get_questions(game)
         questions.append(question)
