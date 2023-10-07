@@ -13,3 +13,7 @@ Calc game
 
 GCD game
 [![asciicast](https://asciinema.org/a/5F3lXvPxAJ1FxujYls9kGJGym.svg)](https://asciinema.org/a/5F3lXvPxAJ1FxujYls9kGJGym)
+
+
+Progression game
+[![asciicast](https://asciinema.org/a/Gc0R8amJ1x5DAOC5LGvrWFEGm.svg)](https://asciinema.org/a/Gc0R8amJ1x5DAOC5LGvrWFEGm)
