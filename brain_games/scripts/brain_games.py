@@ -10,5 +10,9 @@ def start(game):
     play_game(name, question_to_be_asked, questions, right_answers)
 
 
-if __name__ == '__main__':
+def main():
     welcome_user()
+
+
+if __name__ == '__main__':
+    main()
