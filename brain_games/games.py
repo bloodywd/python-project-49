@@ -3,16 +3,18 @@ from math import gcd
 
 
 def get_what_to_ask(game):
+    answer = ''
     if game == 'even':
-        return "Answer \"yes\" if the number is even, otherwise answer \"no\"."
+        answer = 'Answer "yes" if the number is even, otherwise answer "no".'
     elif game == 'calc':
-        return "What is the result of the expression?"
+        answer = "What is the result of the expression?"
     elif game == 'gcd':
-        return "Find the greatest common divisor of given numbers."
+        answer = "Find the greatest common divisor of given numbers."
     elif game == 'progression':
-        return "What number is missing in the progression?"
+        answer = "What number is missing in the progression?"
     elif game == 'prime':
-        return 'Answer "yes" if given number is prime. Otherwise answer "no".'
+        answer = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    return answer
 
 
 def even_game():
@@ -70,21 +72,19 @@ def prime_game():
 
 
 def get_questions(game):
+    question = ''
+    right_answer = ''
     if game == 'even':
         (question, right_answer) = even_game()
-        return (question, right_answer)
     if game == 'calc':
         (question, right_answer) = calc_game()
-        return (question, right_answer)
     if game == 'gcd':
         (question, right_answer) = gcd_game()
-        return (question, right_answer)
     if game == 'progression':
         (question, right_answer) = progression_game()
-        return (question, right_answer)
     if game == 'prime':
         (question, right_answer) = prime_game()
-        return (question, right_answer)
+    return (question, right_answer)
 
 
 def get_data(game):
