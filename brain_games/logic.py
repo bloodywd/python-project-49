@@ -1,5 +1,3 @@
-
-# play game function
 def play_game(name, question_to_be_asked, questions, right_answers):
     # get list with questions and answers
     print(question_to_be_asked)
