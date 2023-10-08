@@ -11,7 +11,7 @@ def play_game(name, question_to_be_asked, questions, right_answers):
             str = f"'{ans_u}' is wrong answer ;(. "
             str += f"Correct answer was '{right_answers[i]}'."
             print(str)
-            print(f'Let\'s try again, {name}')
+            print(f'Let\'s try again, {name}!')
             return
         else:
             print('Correct!')
