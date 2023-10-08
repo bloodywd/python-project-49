@@ -97,5 +97,3 @@ def get_data(game):
         questions.append(question)
         right_answers.append(right_answer)
     return ([question_to_be_asked, questions, right_answers])
-
-# def ... other games
