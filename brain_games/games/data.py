@@ -37,12 +37,9 @@ def get_questions(game):
 
 
 def get_data(game):
-    question_to_be_asked = get_what_to_ask(game)
-    questions = []
-    right_answers = []
-    n = 3
-    for i in range(0, n):
-        (question, right_answer) = get_questions(game)
-        questions.append(question)
-        right_answers.append(right_answer)
-    return ([question_to_be_asked, questions, right_answers])
+    question = get_what_to_ask(game)
+    q_and_a_list = []
+    ROUNDS = 3
+    for i in range(0, ROUNDS):
+        q_and_a_list.append(get_questions(game))
+    return ([question, q_and_a_list])

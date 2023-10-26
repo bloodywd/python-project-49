@@ -1,13 +1,14 @@
-def play_game(name, question_to_be_asked, questions, right_answers):
+def play_game(name, question, q_and_a_list):
     # get list with questions and answers
-    print(question_to_be_asked)
-    n = 3
-    for i in range(0, n):
-        print(f'Question: {questions[i]}')
-        ans_u = input("Your answer: ")
-        if right_answers[i] != ans_u:
-            str = f"'{ans_u}' is wrong answer ;(. "
-            str += f"Correct answer was '{right_answers[i]}'."
+    print(question)
+    ROUNDS = 3
+    for i in range(0, ROUNDS):
+        question, answer = q_and_a_list[i]
+        print(f'Question: {question}')
+        user_answer = input("Your answer: ")
+        if answer != user_answer:
+            str = f"'{user_answer}' is wrong answer ;(. "
+            str += f"Correct answer was '{answer}'."
             print(str)
             print(f'Let\'s try again, {name}!')
             return

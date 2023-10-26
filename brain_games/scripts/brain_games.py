@@ -6,8 +6,8 @@ from ..logic import play_game
 
 def start(game):
     name = welcome_user()
-    [question_to_be_asked, questions, right_answers] = get_data(game)
-    play_game(name, question_to_be_asked, questions, right_answers)
+    [question, q_and_a_list] = get_data(game)
+    play_game(name, question, q_and_a_list)
 
 
 def main():
