@@ -1,7 +1,10 @@
 from random import randint
 
 
-def progression_game():
+DESCRITION = 'What number is missing in the progression?'
+
+
+def get_round():
     next_number = randint(1, 10)
     step = randint(2, 8)
     progression_range = randint(5, 10)

@@ -1,7 +1,10 @@
 from random import randint
 
 
-def prime_game():
+DESCRITION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+
+def get_round():
     question = randint(1, 100)
     if question == 1:
         return (str(question), 'no')

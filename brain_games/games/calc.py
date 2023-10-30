@@ -1,7 +1,10 @@
 from random import randint
 
 
-def calc_game():
+DESCRITION = 'What is the result of the expression?'
+
+
+def get_round():
     number_1 = randint(1, 25)
     number_2 = randint(1, 25)
     operation = randint(0, 2)
