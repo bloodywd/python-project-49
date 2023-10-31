@@ -13,4 +13,4 @@ def get_round():
     ]  # генерируем прогрессию
     answer_index = randint(0, progression_range - 1)  # скрытый элемент
     answer, progression[answer_index] = progression[answer_index], '..'
-    return (' '.join(progression), str(answer))
+    return (' '.join(progression), answer)
