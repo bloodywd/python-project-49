@@ -1,25 +1,12 @@
-from .games import calc
-from .games import even
-from .games import gcd
-from .games import prime
-from .games import progression
 from .cli import welcome_user
 
 
 ROUNDS = 3
-GAMES = {
-    'calc': calc,
-    'even': even,
-    'gcd': gcd,
-    'prime': prime,
-    'progression': progression,
-}
 
 
-def play_game(game_name=None):
+def play_game(game=None):
     name = welcome_user()
-    if game_name:
-        game = GAMES[game_name]
+    if game:
         print(game.DESCRITION)
         for i in range(0, ROUNDS):
             question, answer = (game.get_round())
