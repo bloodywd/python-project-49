@@ -1,19 +1,30 @@
-from random import randint
+from random import randint, choice
 
 
 DESCRITION = 'What is the result of the expression?'
+MIN_NUMBER = 1
+MAX_NUMBER = 25
+OPERATIONS = {
+    'sum': {
+        'action': lambda x, y: x + y,
+        'sign': '+',
+    },
+    'dif': {
+        'action': lambda x, y: x - y,
+        'sign': '-',
+    },
+    'multiply': {
+        'action': lambda x, y: x * y,
+        'sign': '*',
+    },
+}
 
 
 def get_round():
-    number_1 = randint(1, 25)
-    number_2 = randint(1, 25)
-    operation = randint(0, 2)
-    if operation == 0:
-        right_answer = number_1 + number_2
-        return (f'{number_1} + {number_2}', str(right_answer))
-    elif operation == 1:
-        right_answer = number_1 - number_2
-        return (f'{number_1} - {number_2}', str(right_answer))
-    elif operation == 2:
-        right_answer = number_1 * number_2
-        return (f'{number_1} * {number_2}', str(right_answer))
+    number1 = randint(MIN_NUMBER, MAX_NUMBER)
+    number2 = randint(MIN_NUMBER, MAX_NUMBER)
+    operation_names = list(OPERATIONS.keys())  # Создаем список операций
+    operation_name = choice(operation_names)  # Выбираем случайную операцию
+    operation = OPERATIONS[operation_name]
+    right_answer = operation['action'](number1, number2)
+    return (f'{number1} {operation["sign"]} {number2}', str(right_answer))
