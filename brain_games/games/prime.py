@@ -6,11 +6,15 @@ MIN_NUMBER = 1
 MAX_NUMBER = 100
 
 
+def is_prime(number):
+    if number == 1:
+        return False
+    for i in range(2, (number // 2) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+
 def get_round():
     question = randint(MIN_NUMBER, MAX_NUMBER)
-    if question == 1:
-        return (str(question), 'no')
-    for i in range(2, (question // 2) + 1):
-        if question % i == 0:
-            return (str(question), 'no')
-    return (str(question), 'yes')
+    return str(question), 'yes' if is_prime(question) else 'no'

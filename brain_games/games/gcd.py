@@ -12,4 +12,4 @@ def get_round():
     number_1 = randint(MIN_NUMBER, MAX_NUMBER1)
     number_2 = randint(MIN_NUMBER, MAX_NUMBER2)
     right_answer = gcd(number_1, number_2)
-    return (f'{number_1} {number_2}', str(right_answer))
+    return f'{number_1} {number_2}', str(right_answer)

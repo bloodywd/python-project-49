@@ -11,20 +11,15 @@ MAX_PROGRESSION_LENGTH = 10
 
 
 def get_round():
-    first_element = randint(
+    start = randint(
         MIN_FIRST_ELEMENT, MAX_FIRST_ELEMENT
     )  # первый элемент прогрессии
-
     step = randint(MIN_STEP, MAX_STEP)  # шаг между элементами прогрессии
-
     progression_range = randint(
         MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH
     )  # количество элементов в прогрессии
-
-    progression = [
-        str(first_element + i * step) for i in range(progression_range)
-    ]  # генерируем прогрессию
-
+    end = start + progression_range * step
+    progression = list(range(start, end, step))  # генерируем прогрессию
     answer_index = randint(0, progression_range - 1)  # скрытый элемент
     answer, progression[answer_index] = progression[answer_index], '..'
-    return (' '.join(progression), answer)
+    return ' '.join(map(str, progression)), str(answer)

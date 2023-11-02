@@ -9,4 +9,4 @@ MAX_NUMBER = 100
 def get_round():
     question = randint(MIN_NUMBER, MAX_NUMBER)
     right_answer = question % 2 == 0 and 'yes' or 'no'
-    return (str(question), right_answer)
+    return str(question), right_answer
