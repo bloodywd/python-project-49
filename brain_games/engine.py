@@ -10,7 +10,7 @@ def play_game(game):
     print(f'Hello, {name}')
     print(game.DESCRITION)
     for i in range(ROUNDS):
-        question, answer = (game.get_round())
+        question, answer = game.get_question_and_answer()
         print(f'Question: {question}')
         user_answer = input("Your answer: ")
         if answer != user_answer:

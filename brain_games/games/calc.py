@@ -3,8 +3,6 @@ import operator
 
 
 DESCRITION = 'What is the result of the expression?'
-MIN_NUMBER = 1
-MAX_NUMBER = 25
 operators = [
     ('+', operator.add),
     ('-', operator.sub),
@@ -12,9 +10,8 @@ operators = [
 ]
 
 
-def get_round():
-    number1 = randint(MIN_NUMBER, MAX_NUMBER)
-    number2 = randint(MIN_NUMBER, MAX_NUMBER)
+def get_question_and_answer():
+    number1, number2 = randint(1, 25), randint(1, 25)
     operator, method = choice(operators)
     right_answer = method(number1, number2)
     return f'{number1} {operator} {number2}', str(right_answer)
